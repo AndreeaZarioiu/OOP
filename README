@@ -1,0 +1,32 @@
+Zarioiu Andreea 323CA
+
+..........Structura claselor.............
+
+In implementarea temei am pornit de la clasa abstracta Heroes ce contine
+toate campurile necesare unui erou indiferent de tipul acestuia. Clasele
+Wizard, Rogue, Pyromancer, Knight extind clasa Heroes si contin metode
+specifice abilitatilor fiecaruia, o metoda ce calculeaza damageul total
+pe care il da si il si aplica adversarului si o metoda pentru trecerea la nivelul
+urmator.
+
+HeroesFactory contine race modifiers iar LandModifiers contine land modifiers.
+
+In Map pastrez pozitiile eroilor si am metoda getConflicts() prin care optin
+un vector cu perechile de eroi ce se lupta in acea runda (indicii lor).
+
+GameCourse contine logica jocului, parcurgerea rundelor, schimbarea pozitiilor,
+aplicare dot, luptele efective.
+
+In main fac citirea hartii si afisarea.
+
+...........Double Dispatch...............
+
+Am folosit Double Dispatch pentru a aplica land modifiers. In pachetul
+land am ApplyLandModifiers ce implementeaza visitor, contine harta jocului
+si verifica daca eroul se afla pe terenul ce-i da damage mai mare.
+
+Apelez ApplyLandModifiers in GameCourse, in startGame(), cand parcurg
+conflictele din runda curenta (randul 129).
+
+...........bonus git
+Am inclus si folderul .git
